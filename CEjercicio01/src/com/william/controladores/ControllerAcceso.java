@@ -1,14 +1,17 @@
 package com.william.controladores;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import com.william.DAO.ClsUsuario;
 import com.william.entidades.Loguin;
+import com.william.entidades.usuario;
 import com.william.negocio.clsLoguin;
 
 /**
@@ -55,6 +58,10 @@ public class ControllerAcceso extends HttpServlet {
 			if(valordeaceso==1) {
 				
 				System.out.println("WELCOME");
+				ClsUsuario cls = new ClsUsuario();
+				
+				
+				
 				response.sendRedirect("Saludo.jsp");
 			}else {
 				

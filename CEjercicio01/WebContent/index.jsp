@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<script type="text/javascript" src=""></script>
+	
 	<form action="ControllerAcceso" method="post">
 		<label>USER</label>
 		<br>

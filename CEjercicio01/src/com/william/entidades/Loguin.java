@@ -20,9 +20,5 @@ public class Loguin {
 		Pass = pass;
 	}
 	
-	
-	
-	
-	
 
 }
