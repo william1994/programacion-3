@@ -7,19 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.william.Conexion.ConexionBd;
+import com.google.gson.Gson;
+import com.william.DAO.ClsUsuario;
+
 
 /**
- * Servlet implementation class ControllerBd
+ * Servlet implementation class ControllerMostrarInformacion
  */
-@WebServlet("/ControllerBd")
-public class ControllerBd extends HttpServlet {
+@WebServlet("/ControllerMostrarInformacion")
+public class ControllerMostrarInformacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ControllerBd() {
+    public ControllerMostrarInformacion() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,10 +39,12 @@ public class ControllerBd extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
 		
-		ConexionBd con = new ConexionBd();
-		con.RetornarConexion();
+		Gson json = new Gson();
+		
+		ClsUsuario clsusuario = new ClsUsuario();
+		response.getWriter().append(json.toJson(clsusuario.ListadoUSUARIOS()));
 	}
 
 }

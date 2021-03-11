@@ -1,4 +1,4 @@
-package com.william.controladores;
+package com.william.Controladores;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 import com.william.DAO.ClsUsuario;
 import com.william.entidades.Loguin;
@@ -46,30 +47,25 @@ public class ControllerAcceso extends HttpServlet {
 		
 		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
+		Loguin log = new Loguin();
+		clsLoguin clsL = new clsLoguin();
 		
-			Loguin log = new Loguin();
-			clsLoguin clsL = new clsLoguin();
-			
-			log.setUser(user);
-			log.setPass(pass);
-			
-			int valordeaceso =clsL.acceso(log);
-			
-			if(valordeaceso==1) {
-				
-				System.out.println("WELCOME");
-				ClsUsuario cls = new ClsUsuario();
-				
-				
-				
-				response.sendRedirect("Saludo.jsp");
-			}else {
-				
-				System.out.println("ERROR");
-				response.sendRedirect("Error.jsp");
+		log.setUser(user);
+		log.setPass(pass);
+		
+		int valoracceso = clsL.acceso(log);
+		
+		if(valoracceso==1) {
+			ClsUsuario clsUsuario = new ClsUsuario();
+			ArrayList<usuario> Usuario = clsUsuario.ListadoUSUARIOS();
+			response.sendRedirect("Saludo.jsp");
+			for(usuario iterar : Usuario)
+			{
+				System.out.println(iterar.getUsuario());
 			}
-			
-			
+		}else {
+			response.sendRedirect("Error.jsp");
+		}
 	}
 
 }
