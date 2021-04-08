@@ -25,7 +25,9 @@ $(document).ready(function(){
 		<td>${item.idUsuario}</td> 
 		<td>${item.Usuario}</td> 
 		<td>${item.Pass}</td>
-		<td> <a href="ControllerMostrarInformacion?usu=${item.idUsuario}" class="btn btn-danger">ELIMINAR <a> </td>
+		<td> <a href="ControllerMostrarInformacion?IdUsuario=${item.idUsuario}&Eliminar=btne" class="btn btn-danger">ELIMINAR <a>
+		<a href ="add.jsp?Id=${item.idUsuario}&Usuario=${item.Usuario}&Pass=${item.Pass}" class="btn btn-warning">ACTUALIZAR</a>
+		</td>
 		</tr>
 		
 		`	
@@ -34,6 +36,7 @@ $(document).ready(function(){
 });
 });
 </script>
+
 <h1>WELCOME</h1>
 
 	<table class="table table-dark table-striped" id="tablaDatos">
