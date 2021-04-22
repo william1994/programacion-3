@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import com.william.DAO.ClsUsuario;
 import com.william.entidades.Loguin;
@@ -44,6 +44,16 @@ public class ControllerAcceso extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		HttpSession session = request.getSession(true);
+		
+		String btncerra = request.getParameter("btncerrar");
+		
+		if(btncerra!=null) {
+			response.sendRedirect("index.jsp");
+			session.invalidate();
+			
+		}else {
+		
 		
 		String user = request.getParameter("user");
 		String pass = request.getParameter("pass");
@@ -59,12 +69,14 @@ public class ControllerAcceso extends HttpServlet {
 			ClsUsuario clsUsuario = new ClsUsuario();
 			ArrayList<usuario> Usuario = clsUsuario.ListadoUSUARIOS();
 			response.sendRedirect("Saludo.jsp");
+			session.setAttribute("usuario", valoracceso);
 			for(usuario iterar : Usuario)
 			{
 				System.out.println(iterar.getUsuario());
 			}
 		}else {
 			response.sendRedirect("Error.jsp");
+		}
 		}
 	}
 
