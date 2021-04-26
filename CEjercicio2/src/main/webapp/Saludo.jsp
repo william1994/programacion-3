@@ -8,7 +8,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="bg-info"> 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -48,17 +48,28 @@ if (usuSession.equals(null)||usuSession.equals("null")){
 }
 
 %>
-<h1>WELCOME</h1>
 
-
-
+<div class="container">
+<div class="row">
+<div class="offset-md-4 col-md-4 bg-warning">
+<h1 align="center">WELCOME</h1>
+</div>
+<div class="col-md-4 bg-success">
 <form action="ControllerAcceso" method="post">
-<input type="submit" name="btncerrar" value="Cerrar"> 
+<input type="submit" name="btncerrar" value="Cerrar" > 
 </form>
+</div>
+</div>
+</div>
 
 
 
-	<table class="table table-dark table-striped" id="tablaDatos">
+
+
+
+	<div class=" container rounded shadown-lg">
+
+	<table class="table table-dark table-striped rounded" id="tablaDatos">
 	<thead>
 	<th>IdUsuario </th>
 	<th>Usuario </th>
@@ -71,5 +82,7 @@ if (usuSession.equals(null)||usuSession.equals("null")){
 	
 	</tbody>
 	</table>
+	</div>
+	
 </body>
 </html>
