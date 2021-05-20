@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>com.william.Controladores.ControllerAjax</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ControllerCombo</servlet-name>
+  	<display-name>ControllerCombo</display-name>
+  	<description></description>
+  	<servlet-class>com.william.Controladores.ControllerCombo</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ControllerAjax</servlet-name>
   	<url-pattern>/ControllerAjax</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ControllerCombo</servlet-name>
+  	<url-pattern>/ControllerCombo</url-pattern>
   </servlet-mapping>
 </web-app>
