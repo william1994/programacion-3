@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>com.william.Controladores.ControllerCombo</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Controllerfiles</servlet-name>
+  	<display-name>Controllerfiles</display-name>
+  	<description></description>
+  	<servlet-class>com.william.Controladores.Controllerfiles</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ControllerAjax</servlet-name>
   	<url-pattern>/ControllerAjax</url-pattern>
@@ -23,5 +29,9 @@
   <servlet-mapping>
   	<servlet-name>ControllerCombo</servlet-name>
   	<url-pattern>/ControllerCombo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Controllerfiles</servlet-name>
+  	<url-pattern>/Controllerfiles</url-pattern>
   </servlet-mapping>
 </web-app>
