@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import com.william.DAO.ClsArchivos;
+
 /**
  * Servlet implementation class Controllerfiles
  */
@@ -44,7 +46,7 @@ public class Controllerfiles extends HttpServlet {
 		Part archivo = request.getPart("archivo");
 		
 		String nombredelaimagen = archivo.getSubmittedFileName();
-		String ruta = "C:/practicafiles/"+nombredelaimagen;
+		String ruta = "C:\\Users\\William\\Documents\\GitHub\\programacion-3\\CEjercicio2\\src\\main\\webapp\\Files\\"+nombredelaimagen;
 		
 		try {
 			FileOutputStream fileoutput = new FileOutputStream(ruta);
@@ -59,7 +61,9 @@ public class Controllerfiles extends HttpServlet {
 			// TODO: handle exception
 		}
 		
+		ClsArchivos files = new ClsArchivos();
 		
+		files.guardararchivos(nombredelaimagen);
 	}
 
 }
